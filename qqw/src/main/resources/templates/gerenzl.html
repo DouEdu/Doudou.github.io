@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人资料</title>
+    <script src="../static/js/jquery-3.6.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/gerenzl.js" type="text/javascript" charset="utf-8"></script>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        a{
+            color: gray;
+            font-size: 15px;
+            padding: 10px;
+            text-decoration:none;
+        }
+        #div1{
+            width: 1500px;
+            height: 750px;
+            /*border: 1px solid darkred;*/
+            margin: 0 auto;
+        }
+        #div2{
+            width: 1500px;
+            height: 80px;
+            border: 1px solid whitesmoke;
+        }
+        .dns{
+            width: 230px;
+            height: 50px;
+            /*border: 1px solid darkblue;*/
+            margin-top: 13px;
+            margin-left: 50px;
+            float: left;
+        }
+        .div2-1{
+            width: 550px;
+            height: 40px;
+            /*border: 1px solid darkorange;*/
+            margin-left: 900px;
+            margin-top: 25px;
+        }
+        #div3{
+            width: 1500px;
+            height: 50px;
+            /*border: 1px solid dodgerblue;*/
+        }
+        #div4{
+            width: 150px;
+            height: 200px;
+            /* border: 1px solid deeppink;*/
+            margin-left: 320px;
+            float: left;
+            margin-top: 10px;
+        }
+        #div4-1{
+            width: 130px;
+            height: 30px;
+            border: 1px solid gainsboro;
+            background-color: #F5F5F5;
+            padding-top:5px;
+            padding-left: 10px;
+        }
+        #div4-2{
+            width: 130px;
+            height: 100px;
+            border: 1px solid gainsboro;
+            size: 13px;
+            color: #428BCA;
+            padding-top:5px;
+            padding-left: 10px;
+        }
+        #div4-3{
+            width: 130px;
+            height: 30px;
+            border: 1px solid gainsboro;
+            background-color: #F5F5F5;
+            padding-top:5px;
+            padding-left: 10px;
+        }
+        #div5{
+            width: 700px;
+            height: 250px;
+            border: 1px solid gainsboro;
+            margin-left: 480px;
+            margin-top: 10px;
+        }
+        .div5-1{
+            width: 700px;
+            height: 50px;
+            border: 1px solid gainsboro;
+            padding-top: 15px;
+        }
+        .fon{
+            padding-left: 25px;
+            font-size: 15px;
+        }
+        .kon-1{
+            width: 550px;
+            height: 180px;
+            /*border: 1px solid darkgreen;*/
+            margin: 0 auto;
+        }
+        .inp{
+            width: 220px;
+            height: 30px;
+            border:1px solid #d2d2d2;
+            font-size: 13px;
+            margin: 8px;
+            /* 去除被点击后的默认边框 */
+            outline:none;
+        }
+        .but{
+            width: 50px;
+            height: 30px;
+            border: 1px solid  #428BCA;
+            background-color:  #428BCA;
+            margin-left: 113px;
+            margin-top: 5px;
+            border-radius: 5%;
+        }
+        #div6{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkgreen;*/
+            float: left;
+            margin-top: 20px;
+        }
+        #div7{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkorange;*/
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">
+        <div class="dns">
+            <img src="../static/images/index/stumalllogo.png">
+        </div>
+        <div class="div2-1">
+            <div class="dropdown">
+                <a href="#" data-toggle="dropdown" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/齿轮组,设置,设定.png"> 管理<span class="caret"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                <a href="/collect" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/喜爱.png">收藏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                <a href="/indent" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/文件.png">订单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                <a href="/ShoppingCart" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/购物车满.png">购物车&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                <a href="/" style="text-decoration:none;"><img style="height: 15px;width: 20px;" src="../static/images/index/个人头像_o.png">首页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/xgpasswprd">修改密码</a></li>
+                    <li><a href="/gerenzl">个人资料</a></li>
+                    <li><a href="/shangchuantx">上传头像</a></li>
+                    <li><a href="/shouhuogl">收货管理</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="div3">
+        <img style="width: 1500px;height: 49px" src="../static/images/index/搜索框.png">
+    </div>
+    <div id="div4">
+        <div id="div4-1">
+            <font style="font-size: 15px;color: #5e5e5e;">我的订单</font>
+        </div>
+        <div id="div4-3">
+            <font style="font-size: 15px;color: #5e5e5e;">资料修改</font>
+        </div>
+        <div id="div4-2">
+            <p style="height: 10px">修改密码</p>
+            <p style="height: 10px">个人资料</p>
+            <p style="height: 10px">上传头像</p>
+            <p style="height: 10px">收货管理</p>
+        </div>
+    </div>
+    <div id="div5">
+        <div class="div5-1">
+            <a class="fon" style="text-decoration:none;color: #428BCA;">修改密码</a>
+            <a class="fon" style="text-decoration:none;color: #5e5e5e;">个人资料</a>
+            <a class="fon" style="text-decoration:none;color: #428BCA;">上传头像</a>
+            <a class="fon" style="text-decoration:none;color: #428BCA;">收货管理</a>
+        </div>
+        <div class="kon-1">
+<!--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#646464">用户名：</font>&nbsp;&nbsp;-->
+<!--            <input class="inp" type="text" id="username" placeholder="用户名">-->
+<!--            <br>-->
+<!--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#646464">电话号码：</font>&nbsp;&nbsp;-->
+<!--            <input class="inp" type="password" id="phone" placeholder="123456789">-->
+<!--            <br>-->
+<!--            &nbsp;&nbsp;&nbsp;&nbsp;<font color="#646464">电子邮箱：</font>&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--            <input class="inp" type="password" id ="email" placeholder="@qq.com">-->
+<!--            <br>-->
+<!--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;性别： &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" checked value="男">男 &nbsp;&nbsp;&nbsp;-->
+<!--                 <input type="radio" name="gender" value="女">女-->
+<!--            <br>-->
+<!--            <button class="but" id="submit" style="color: white">修改</button>-->
+        </div>
+    </div>
+    <div id="div6">
+        <img style="width: 1500px;height: 160px" src="../static/images/index/index1.1.png">
+    </div>
+    <div id="div7">
+        <img style="width: 1500px;height: 160px" src="../static/images/index/index1.2.png">
+    </div>
+</div>
+</div>
+<script>
+    function send_username(){
+        var userName = $('#username').val();
+        $.ajax({
+            url: '/name',
+            type: 'POST',
+            data: {userName: userName},
+            // contentType: "application/json;charset=utf-8",
+            // dataType: 'json',
+            success : function (resp) {
+                if (resp == true) {
+                    location = location;
+                    // alert("账号重复，请重新输入");
+                    alert("账号重复，请重新输入");
+                }
+            }
+        })
+        var value = userName.trim();
+        if (value === "") {
+            alert("输入不能为空！");
+            location = location;
+            this.value = "";
+        } else {
+            this.value = value;
+        }
+    }
+    function check(){
+        var userName = $('#username').val();
+        var userPhone = $('#phone').val();
+        var userEmail = $('#email').val();
+        // alert(userName)
+        // alert(userPhone)
+        // alert(userEmail)
+        if (userName == null || userName == ""){
+            alert("用户名不能为空")
+            location = location
+            return
+        }
+
+        const userSex = document.getElementsByName("sex");
+        for (let i =0; i<userSex.length;i++){
+            if (userSex[i].checked){
+                if (userSex[i].value==="男"){
+                    var sex = "男";
+                }else if (userSex[i].value==="女"){
+                    var sex = "女";
+                }
+            }
+        }
+        var user={
+            userName : userName,
+            userPhone : userPhone,
+            userEmail : userEmail,
+            userSex : sex,
+        }
+        $.ajax({
+            url:'/gerenzl2',
+            // async:false,
+            // cache:false,
+            type:"POST",
+            contentType: 'application/json;charset=utf-8',
+            // dataType:'json',
+            data:JSON.stringify(user),
+            success:function (data){
+                // alert(data)
+                if (data){
+                    alert("修改成功");
+                    window.location.href= '/register'
+                }else {
+                    location = location
+                    alert("修改失败");
+
+                }
+            }
+        });
+    }
+    function checkInput(input) {
+        var value = input.value.trim();
+        if (value === "") {
+            alert("输入不能为空！");
+            input.value = "";
+        } else {
+            input.value = value;
+        }
+    }
+</script>
+</body>
+</html>

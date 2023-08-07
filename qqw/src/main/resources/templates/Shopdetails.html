@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <script src="../static/js/jquery-3.6.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/Shopdetails.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        a{
+            color: gray;
+            font-size: 15px;
+            padding: 10px;
+            text-decoration:none;
+        }
+        #div1{
+            width: 1500px;
+            height: 1300px;
+            /*border: 1px solid darkred;*/
+            margin: 0 auto;
+        }
+        #div2{
+            width: 1500px;
+            height: 80px;
+            border: 1px solid whitesmoke;
+        }
+        .dns{
+            width: 230px;
+            height: 50px;
+            /*border: 1px solid darkblue;*/
+            margin-top: 13px;
+            margin-left: 50px;
+            float: left;
+        }
+        .div2-1{
+            width: 550px;
+            height: 40px;
+            /*border: 1px solid darkorange;*/
+            margin-left: 900px;
+            margin-top: 25px;
+        }
+        #div3{
+            width: 1500px;
+            height: 50px;
+           /* border: 1px solid dodgerblue;*/
+        }
+        .div4{
+            width: 700px;
+            height: 320px;
+            /*border: 1px solid deeppink;*/
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .dn{
+            width: 300px;
+            height: 300px;
+            /*border: 1px solid darkcyan;*/
+            float: left;
+        }
+        #div4-1{
+            width: 330px;
+            height: 300px;
+            /*border: 1px solid gainsboro;*/
+            margin-left: 330px;
+        }
+        .xue{
+            width: 300px;
+            height: 80px;
+            border: 2px solid #31b0d5;
+            color: #3455AA;
+            background-color: #F0F9FF;
+        }
+        .shu{
+            width: 200px;
+            height: 30px;
+            /*border: 1px solid darkorange;*/
+            margin-left: 25px;
+            margin-top: 6px;
+        }
+        .mai{
+            width: 230px;
+            height: 50px;
+            /*border: 1px solid deeppink;*/
+            margin-left: 50px;
+        }
+        .btun{
+            width: 220px;
+            height: 40px;
+            background-color: #428BCA;
+            color: white;
+            border: none;
+        }
+        #jia{
+            width: 230px;
+            height: 40px;
+            /*border: 1px solid darkorange;*/
+            margin-left: 50px;
+        }
+        #div5{
+            width: 700px;
+            height: 530px;
+            /*border: 1px solid darkorange;*/
+            margin: 0 auto;
+        }
+        #div6{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkgreen;*/
+            float: left;
+            margin-top: 20px;
+            margin-left: -400px;
+        }
+        #div7{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkorange;*/
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div class="dns">
+                <img src="../static/images/index/stumalllogo.png">
+            </div>
+            <div class="div2-1">
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/齿轮组,设置,设定.png"> 管理<span class="caret"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/Collect/shopsc" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/喜爱.png">收藏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/Indent/dingdan" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/文件.png">订单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/Cart/gwc" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/购物车满.png">购物车&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/user/shouye" style="text-decoration:none;"><img style="height: 15px;width: 20px;" src="../static/images/index/个人头像_o.png">首页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/user/xgmima">修改密码</a></li>
+                        <li><a href="/user/grziliao">个人资料</a></li>
+                        <li><a href="/user/sctouxiang">上传头像</a></li>
+                        <li><a href="/user/shguanli">收货管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="div3">
+            <img style="width: 1500px;height: 49px" src="../static/images/index/搜索框.png">
+        </div>
+        <div class="div4">
+            <div class="dn">
+                <img style="width: 100%;height: 100%" src="../static/images/index/dn1.png">
+            </div>
+            <div id="div4-1">
+                <h4>戴尔Dell燃700R1605银色</h4>
+                <font style="font-size: 2px;color: #5e5e5e">仅上海，广州，沈阳仓有货！预购从速！</font>
+                <div class="xue">
+                    <p>学员售价：<font style="font-size: 25px;">￥4899.00</font></p>
+                    <p>*退货补运费*7天无理由退货*24小时快速发货</p>
+                </div>
+                <div class="shu">
+                    <font style="font-size: 15px;color: black">数量：</font>
+                    <button style="width: 20px;height: 25px;text-align: center;">-</button>
+                    <input type="text" value="1" style="width: 30px;height: 20px;text-align: center;">
+                    <button style="width: 20px;height: 25px;text-align: center;">+</button>
+                </div>
+                <p><font style="color: #5e5e5e;font-size: 12px;margin-left: 25px;">电脑商城发货并提供售后服务，今日下单，明日送达</font></p>
+                <div class="mai">
+                    <button class="btun">立即购买</button>
+                </div>
+                <div id="jia">
+                    <input type="text" value="加入购物车" style="width: 100px;height: 25px;text-align: center;border: 1px solid lightgray;color: #5e5e5e">
+                    <input type="text" value="加入收藏" style="width: 90px;height: 25px;text-align: center;border: 1px solid lightgray;color: #5e5e5e">
+                </div>
+            </div>
+            <div id="div5">
+                <img style="width: 680px;height: 525px" src="../static/images/index/售后保障.png">
+            </div>
+            <div id="div6">
+                <img style="width: 1500px;height: 160px" src="../static/images/index/index1.1.png">
+            </div>
+            <div id="div7">
+                <img style="width: 1500px;height: 160px" src="../static/images/index/index1.2.png">
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="../static/js/jquery-3.6.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/index.js" type="text/javascript" charset="utf-8"></script>
+
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        a{
+            color: gray;
+            font-size: 15px;
+            padding: 10px;
+            text-decoration:none;
+        }
+        #div1{
+            width: 1500px;
+            height: 1550px;
+            /*border: 1px solid darkred;*/
+            margin: 0 auto;
+        }
+        #div2{
+            width: 1500px;
+            height: 80px;
+            border: 1px solid whitesmoke;
+        }
+        .dns{
+            width: 230px;
+            height: 50px;
+            /*border: 1px solid darkblue;*/
+            margin-top: 13px;
+            margin-left: 50px;
+            float: left;
+        }
+        .div2-1{
+            width: 550px;
+            height: 40px;
+            /*border: 1px solid darkorange;*/
+            margin-left: 900px;
+            margin-top: 25px;
+        }
+        #div3{
+            width: 1500px;
+            height: 50px;
+            /*border: 1px solid dodgerblue;*/
+        }
+        #div4{
+            width: 1500px;
+            height: 600px;
+            /*border: 1px solid deeppink;*/
+        }
+        .div4-1{
+            width: 210px;
+            height: 600px;
+            /*border: 1px solid darkcyan;*/
+            margin-left: 180px;
+            text-align:center;
+            background-color: #2e6da4;
+            font-size: 15px;
+            color: white;
+            float: left;
+        }
+        .div4-2{
+            width: 850px;
+            height: 550px;
+            border: 1px solid white;
+            margin-left: 480px;
+            margin-top: 25px;
+        }
+        #div5{
+            width: 1500px;
+            height: 470px;
+            /*border: 1px solid saddlebrown;*/
+        }
+        .div5-1{
+            width: 500px;
+            height: 470px;
+            /*border: 1px solid darkblue;*/
+            margin-left: 180px;
+            float: left;
+        }
+        .xin{
+            width: 500px;
+            height: 50px;
+            /*border: 1px solid deeppink;*/
+            background-color: whitesmoke;
+            font-size: 20px;
+            color: darkslategray;
+            padding-top:8px;
+            padding-left: 15px;
+        }
+        .zuo{
+            width: 500px;
+            height: 100px;
+            border: 1px solid gainsboro;
+            float: left;
+        }
+        .zuo-1{
+            width: 290px;
+            height: 100px;
+            /*border: 1px solid darkred;*/
+            font-size: 15px;
+            padding-top:8px;
+            color: #1b6d85;
+            float: left;
+        }
+        .zuo-2{
+            width: 50px;
+            height: 100px;
+            /*border: 1px solid darkcyan;*/
+            margin-left: 325px;
+            margin-top: -100px;
+            font-size: 15px;
+            padding-top:8px;
+            color: darkslategray;
+            float: left;
+        }
+        .zuo-3{
+            width: 80px;
+            height: 100px;
+            /*border: 1px solid darkorange;*/
+            margin-left: 400px;
+        }
+        .div5-2{
+            width: 500px;
+            height: 500px;
+           /* border: 1px solid darkblue;*/
+            margin-left: 830px;
+        }
+        .re{
+            width: 500px;
+            height: 50px;
+            /*border: 1px solid deeppink;*/
+            background-color: whitesmoke;
+            font-size: 20px;
+            color: darkslategray;
+            padding-top:8px;
+            padding-left: 15px;
+        }
+        .you{
+            width: 500px;
+            height: 100px;
+            border: 1px solid gainsboro;
+            float: left;
+        }
+        .yuo-1{
+            width: 290px;
+            height: 100px;
+            /*border: 1px solid darkred;*/
+            font-size: 15px;
+            padding-top:8px;
+            color: #1b6d85;
+            float: left;
+        }
+        .yuo-2{
+            width: 50px;
+            height: 100px;
+            /*border: 1px solid darkcyan;*/
+            margin-left: 325px;
+            margin-top: -100px;
+            font-size: 15px;
+            padding-top:8px;
+            color: darkslategray;
+            float: left;
+        }
+        .yuo-3{
+            width: 80px;
+            height: 100px;
+            /*border: 1px solid darkorange;*/
+            margin-left: 400px;
+        }
+        #div6{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkgreen;*/
+            float: left;
+        }
+        #div7{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkorange;*/
+            float: left;
+        }
+        .commodity-list li {
+            margin: 10px;
+        }
+        .commodity-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 23%;
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+        }
+        .commodity-info p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 400px;  // 设置最大宽度为200px，可以根据实际情况调整
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <p th:text="${userName}">123</p>
+            <div class="dns">
+
+                <img src="../static/images/index/stumalllogo.png">
+            </div>
+            <div class="div2-1">
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/齿轮组,设置,设定.png"> 管理<span class="caret"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/collect" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/喜爱.png">收藏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/indent" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/文件.png">订单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/ShoppingCart" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/购物车满.png">购物车&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/register" style="text-decoration:none;"><img style="height: 15px;width: 20px;" src="../static/images/index/个人头像_o.png">登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/xgpasswprd">修改密码</a></li>
+                        <li><a href="/gerenzl">个人资料</a></li>
+                        <li><a href="/shangchuantx">上传头像</a></li>
+                        <li><a href="/shouhuogl">收货管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="div3">
+            <img style="width: 1500px;height: 49px" src="../static/images/index/搜索框.png">
+        </div>
+        <div id="div4">
+            <div class="div4-1">
+                <p>图书音像</p>
+                <p>家用电器</p>
+                <p>电脑办公</p>
+                <p>个护化妆</p>
+                <p>钟表</p>
+                <p>母婴</p>
+                <p>食品饮料</p>
+                <p>汽车用品</p>
+                <p>玩具乐器</p>
+                <p>手机</p>
+                <p>数码</p>
+                <p>家居家装</p>
+                <p>厨具</p>
+                <p>服饰内衣</p>
+                <p>鞋靴</p>
+                <p>礼品箱包</p>
+                <p>珠宝</p>
+                <p>运动健康</p>
+                <p>充值票务</p>
+            </div>
+            <div class="div4-2">
+                    <img id="images" src="../static/images/index/index_banner1.png" width="100%" height="100%">
+                    <script>
+                        var number = 1;
+                        function fun() {
+                            number++;
+                            if (number >= 5) {
+                                number = 1;
+                            }
+                            var images = document.getElementById("images");
+                            images.src = "../static/images/index/index_banner"+number+".png";
+                        }
+                        setInterval(fun,1500);
+                    </script>
+                </div>
+            </div>
+        <div id="div5" class="commodity-list">
+<!--            <div class="div5-1">-->
+<!--                <div class="xin">-->
+<!--                    <p>新到好货</p>-->
+<!--                </div>-->
+<!--                <div class="zuo">-->
+<!--                    <div class="zuo-1">-->
+<!--                        <font>齐心(COMIX)C5902 A5优品商务笔记本子记事本日记本122张</font>-->
+<!--                    </div>-->
+<!--                    <div class="zuo-2">-->
+<!--                        <font >￥18</font>-->
+<!--                    </div>-->
+<!--                    <div class="zuo-3">-->
+<!--                        <img style="width: 78px;height: 95px" src="../static/images/portal/02COMIXC5902A5122blue/1_big.png">-->
+<!--                    </div>-->
+
+<!--                </div>-->
+
+<!--            </div>-->
+<!--            <div class="div5-1">-->
+<!--                <div class="xin">-->
+<!--                    <p>热销排行</p>-->
+<!--                </div>-->
+<!--                <div class="zuo">-->
+<!--                    <div class="zuo-1">-->
+<!--                        <font>齐心(COMIX)C5902 A5优品商务笔记本子记事本日记本122张</font>-->
+<!--                    </div>-->
+<!--                    <div class="zuo-2">-->
+<!--                        <font>￥18</font>-->
+<!--                    </div>-->
+<!--                    <div class="zuo-3">-->
+<!--                        <img style="width: 78px;height: 95px" src="../static/images/portal/02COMIXC5902A5122blue/1_big.png">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+        <div id="div6">
+            <img style="width: 1500px;height: 160px" src="../static/images/index/index1.1.png">
+        </div>
+        <div id="div7">
+            <img style="width: 1500px;height: 160px" src="../static/images/index/index1.2.png">
+        </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="../static/js/jquery-3.6.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/logon.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        #div1{
+            width: 1500px;
+            height: 900px;
+            /*border: 1px solid darkblue;*/
+            margin: 0 auto;
+        }
+        #div2{
+            width: 1500px;
+            height: 80px;
+            border: 1px solid whitesmoke;
+        }
+        .div2-1{
+            width: 230px;
+            height: 50px;
+            /*border: 1px solid darkmagenta;*/
+            margin-top: 12px;
+            margin-left: 50px;
+            float: left;
+        }
+        .div2-2{
+            width: 180px;
+            height: 30px;
+            /*border: 1px solid darkred;*/
+            margin-top: 22px;
+            margin-left: 1300px;
+        }
+        #div3{
+            width: 1500px;
+            height: 500px;
+            /*border: 1px solid deeppink;*/
+            float: left;
+        }
+        #kon{
+            width: 350px;
+            height: 260px;
+            border: 1px solid white;
+            margin-top: -390px;
+            margin-left: 1000px;
+            float: left;
+            background-color: white;
+            /* 圆角边框 */
+            border-radius: 5%;
+        }
+        .inp{
+            width: 190px;
+            height: 26px;
+            border:1px solid #d2d2d2;
+            font-size: 13px;
+            margin: 8px;
+            /* 去除被点击后的默认边框 */
+            outline:none;
+        }
+        .but{
+            width: 85px;
+            height: 30px;
+            border: 1px solid  #428BCA;
+            background-color:  #428BCA;
+            margin-left: 100px;
+            border-radius: 5%;
+            margin-top: -9%;
+            float: left;
+        }
+        #div4{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkgreen;*/
+            float: left;
+        }
+        #div5{
+            width: 1500px;
+            height: 160px;
+           /* border: 1px solid darkorange;*/
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div class="div2-1">
+                <img src="../static/images/index/stumalllogo.png">
+            </div>
+            <div class="div2-2">
+                <font>欢迎访问<b>电脑商城</b></font>
+            </div>
+        </div>
+        <div id="div3">
+            <img style="width: 1500px;height: 500px" src="../static/images/index/bg1.png">
+        </div>
+        <div id="kon">
+            <div class="kon-1">
+               <p><font color="gray">&nbsp;&nbsp;新用户注册</font></p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#646464">名字：</font>&nbsp;&nbsp;
+                <input class="inp" type="text" id="username" placeholder="请输入用户名" onblur="checkInput(this)">
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#646464">密码：</font>&nbsp;&nbsp;
+                <input class="inp" type="password" id="password" placeholder="请输入密码" onblur="checkInput(this)">
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color="#646464">确认密码：</font>&nbsp;
+                <input class="inp" type="password" id="password1" placeholder="请再次输入密码" onblur="checkInput(this)">
+                <p style="margin-left: 220px;margin-top: -3px;float: left"><font color="gray" size="2px">已有账号?<a href="/register">登录</a></font></p><a></a>
+                <button class="but" style="color: white" id="submit">立即注册</button>
+            </div>
+        </div>
+        <div id="div4">
+            <img style="width: 1500px;height: 160px" src="../static/images/index/index1.1.png">
+        </div>
+        <div id="div5">
+            <img style="width: 1500px;height: 160px" src="../static/images/index/index1.2.png">
+        </div>
+    </div>
+</body>
+<script>
+    function checkInput(input) {
+
+        var value = input.value.trim();
+        if (value === "") {
+            alert("输入不能为空！");
+            input.value = "";
+        } else {
+            input.value = value;
+            var regExp = /^[a-zA-Z0-9\u4e00-\u9fa5]+$/; // 只允许输入字母、数字和中文
+            if (!regExp.test(input.value)) {
+                alert("不能输入特殊符号！");
+                // input.value = input.value.replace(/[^\u4e00-\u9fa5a-zA-Z0-9]/g, ''); // 将特殊符号替换为空
+                location = location;
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.example.qqw.dao.CommodityDao">
+    <resultMap id="CommodityMap" type="Commodity">
+        <result column="commodity_id" property="commodityId"/>
+        <result column="commodity_name" property="commodityName"/>
+        <result column="commodity_img" property="commodityImg"/>
+        <result column="commodity_price" property="commodityPrice"/>
+        <result column="commodity_overview" property="commodityOverview"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="creation_time" property="creationTime"/>
+        <result column="founder" property="founder"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="update_by" property="updateBy"/>
+    </resultMap>
+
+    <select id="seekCommodity" resultMap="CommodityMap">
+        SELECT * FROM tb_commodity
+    </select>
+
+</mapper>

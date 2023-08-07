@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增收货地址</title>
+    <script src="../static/js/jquery-3.6.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+<!--    <script src="../static/js/shgl1.js" type="text/javascript" charset="utf-8"></script>-->
+    <script src="../static/js/shgl2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/xinshgl.js" type="text/javascript" charset="utf-8"></script>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript">
+        // $(function(){
+        //     $.ajax({
+        //         type:"POST",
+        //         url:"/address/get",
+        //         data:{"pid":0},
+        //         dataType:"json",
+        //         success:function(data){
+        //             for(var i=0;i<data.length;i++){
+        //                 var $option = $("<option value='"+data[i].id+"'>"+data[i].name+"</option>");
+        //                 $("#sheng").append($option);
+        //             }
+        //         }
+        //     });
+        // });
+        // function changeCity(){
+        //     //当省的内容发生变化的时候，响应的改变省的隐藏域的值
+        //     $("#phidden").val($("#province option:selected").html());
+        //     //页面加载完成，将省的信息加载完成
+        //     //下拉列表框标签对象的val()方法就是选中的option标签的value的属性值
+        //     var pid = $("#sheng").val();
+        //     $.ajax({
+        //         url:"/address/get",
+        //         data:{"pid":pid},
+        //         dataType:"json",
+        //         success:function(data){
+        //             //清空城市下拉列表框的内容
+        //             $("#city").html("<option value=''>-- 请选择市 --</option>");
+        //             $("#quxian").html("<option value=''>-- 请选择区/县 --</option>");
+        //             //遍历json，json数组中每一个json，都对应一个省的信息，都应该在省的下拉列表框下面添加一个<option>
+        //             for(var i=0;i<data.length;i++){
+        //                 var $option = $("<option value='"+data[i].id+"'>"+data[i].name+"</option>");
+        //                 $("#city").append($option);
+        //             }
+        //         }
+        //     });
+        // }
+        // function changeDistrict(){
+        //     //当城市的内容发生变化的时候，相应的改变城市的隐藏域的值
+        //     $("#chidden").val($("#city option:selected").html());
+        //     //页面加载完成，将省的信息加载完成
+        //     //下拉列表框标签对象的val()方法就是选中的option标签的value的属性值
+        //     var pid = $("#city").val();
+        //     $.ajax({
+        //         url:"/address/get",
+        //         data:{"pid":pid},
+        //         dataType:"json",
+        //         success:function(data){
+        //             //清空城市下拉列表框的内容
+        //             $("#quxian").html("<option value=''>-- 请选择区/县 --</option>");
+        //             for(var i=0;i<data.length;i++){
+        //                 var $option = $("<option value='"+data[i].id+"'>"+data[i].name+"</option>");
+        //                 $("#quxian").append($option);
+        //             }
+        //         }
+        //     });
+        // }
+        // function changeDhiddenValue(){
+        //     //当城市的内容发生变化的时候，相应的改变城市的隐藏域的值
+        //     $("#dhidden").val($("#quxian option:selected").html());
+        // }
+    </script>
+    <style>
+        a{
+            color: gray;
+            font-size: 15px;
+            padding: 10px;
+            text-decoration:none;
+        }
+        #div1{
+            width: 1500px;
+            height: 750px;
+            /*border: 1px solid darkred;*/
+            margin: 0 auto;
+        }
+        #div2{
+            width: 1500px;
+            height: 80px;
+            border: 1px solid whitesmoke;
+        }
+        .dns{
+            width: 230px;
+            height: 50px;
+            /*border: 1px solid darkblue;*/
+            margin-top: 13px;
+            margin-left: 50px;
+            float: left;
+        }
+        .div2-1{
+            width: 550px;
+            height: 40px;
+            /*border: 1px solid darkorange;*/
+            margin-left: 900px;
+            margin-top: 25px;
+        }
+        #div3{
+            width: 1500px;
+            height: 50px;
+            /*border: 1px solid dodgerblue;*/
+        }
+        #div4{
+            width: 150px;
+            height: 200px;
+            /* border: 1px solid deeppink;*/
+            margin-left: 320px;
+            float: left;
+            margin-top: 10px;
+        }
+        #div4-1{
+            width: 130px;
+            height: 30px;
+            border: 1px solid gainsboro;
+            background-color: #F5F5F5;
+            padding-top:5px;
+            padding-left: 10px;
+        }
+        #div4-2{
+            width: 130px;
+            height: 100px;
+            border: 1px solid gainsboro;
+            size: 13px;
+            color: #428BCA;
+            padding-top:5px;
+            padding-left: 10px;
+        }
+        #div4-3{
+            width: 130px;
+            height: 30px;
+            border: 1px solid gainsboro;
+            background-color: #F5F5F5;
+            padding-top:5px;
+            padding-left: 10px;
+        }
+        #div5{
+            width: 700px;
+            height: 400px;
+            border: 1px solid gainsboro;
+            margin-left: 480px;
+            margin-top: 10px;
+        }
+        .div5-1{
+            width: 700px;
+            height: 50px;
+            border: 1px solid gainsboro;
+            padding-top: 15px;
+        }
+        .fon{
+            padding-left: 25px;
+            font-size: 15px;
+        }
+        .kon-1{
+            width: 550px;
+            height: 330px;
+            /*border: 1px solid darkgreen;*/
+            margin: 0 auto;
+        }
+        .inp{
+            width: 400px;
+            height: 30px;
+            border:2px solid gainsboro;
+            font-size: 13px;
+            margin: 8px;
+            /* 去除被点击后的默认边框 */
+            outline:none;
+        }
+        .but{
+            width: 80px;
+            height: 30px;
+            border: 1px solid  #428BCA;
+            background-color:  #428BCA;
+            margin-left: 40px;
+            border-radius: 5%;
+        }
+        #div6{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkgreen;*/
+            float: left;
+            margin-top: 20px;
+        }
+        #div7{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkorange;*/
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div class="dns">
+                <img src="../static/images/index/stumalllogo.png">
+            </div>
+            <div class="div2-1">
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/齿轮组,设置,设定.png"> 管理<span class="caret"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/collect" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/喜爱.png">收藏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/indent" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/文件.png">订单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/ShoppingCart" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/购物车满.png">购物车&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/" style="text-decoration:none;"><img style="height: 15px;width: 20px;" src="../static/images/index/个人头像_o.png">首页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/xgpasswprd">修改密码</a></li>
+                        <li><a href="/gerenzl">个人资料</a></li>
+                        <li><a href="/shangchuantx">上传头像</a></li>
+                        <li><a href="/shouhuogl">收货管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="div3">
+            <img style="width: 1500px;height: 49px" src="../static/images/index/搜索框.png">
+        </div>
+        <div id="div4">
+            <div id="div4-1">
+                <font style="font-size: 15px;color: #5e5e5e;">我的订单</font>
+            </div>
+            <div id="div4-3">
+                <font style="font-size: 15px;color: #5e5e5e;">资料修改</font>
+            </div>
+            <div id="div4-2">
+                <p style="height: 10px">修改密码</p>
+                <p style="height: 10px">个人资料</p>
+                <p style="height: 10px">上传头像</p>
+                <p style="height: 10px">收货管理</p>
+            </div>
+        </div>
+        <div id="div5">
+            <div class="div5-1">
+                <a class="fon" style="text-decoration:none;color: #428BCA;">修改密码</a>
+                <a class="fon" style="text-decoration:none;color: #428BCA;">个人资料</a>
+                <a class="fon" style="text-decoration:none;color: #428BCA;">上传头像</a>
+                <a class="fon" style="text-decoration:none;color: #5e5e5e;">收货管理</a>
+            </div>
+            <div class="kon-1">
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color="black">收货人：</font>&nbsp;&nbsp;
+                <input class="inp" type="text" id="name" placeholder="请输入收货人姓名" onblur="checkInput(this)">
+                <br>
+                省/直辖市：&nbsp;&nbsp;&nbsp;&nbsp;
+                <select id="province" name="province"  style="width: 130px;height: 30px;border:2px solid gainsboro;margin-top: 10px" >>
+                    <option value="" disabled selected style="display:none;">请选择</option>
+                    <option value="北京市">北京市</option>
+                    <option value="上海市">上海市</option>
+                    <option value="广东省">广东省</option>
+                    <option value="浙江省">浙江省</option>
+
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;城市：&nbsp;&nbsp;&nbsp;&nbsp;
+                <select id="city" name="province"   style="width: 130px;height: 30px;border:2px solid gainsboro;margin-top: 10px" >>
+                    <option value="" disabled selected style="display:none;">请选择</option>
+                    <option value="" >请先选择省/市</option>
+                </select>
+                <br>
+                <!--onchange="changeCity()"-->
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区县：&nbsp;&nbsp;&nbsp;&nbsp;
+                <select id="district" name="province" style="width: 130px;height: 30px;border:2px solid gainsboro;margin-top: 10px" >
+                    <option value="" disabled selected style="display:none;">请选择</option>
+                    <option value="">请先选择城市</option>
+                </select>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮政编码：&nbsp;&nbsp;&nbsp;&nbsp;
+                <input style="width: 130px;height: 30px; border:2px solid gainsboro;" id="postcode" placeholder="请输入邮政编码" onblur="checkInput(this)">
+                <br>
+                &nbsp;<p color="black">详细地址：</p>&nbsp;&nbsp;&nbsp;&nbsp;
+                <textarea style="width: 400px;height: 65px; border:2px solid gainsboro; margin-top: -45px; margin-left:72px;resize: none" type="text" id="detail" placeholder="请输入详细的收货地址，小区名称，门牌号等" onblur="checkInput(this)"></textarea>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;手机：&nbsp;&nbsp;&nbsp;&nbsp;
+                <input style="width: 130px;height: 30px; border:2px solid gainsboro;" id="phone" placeholder="请输入手机号码" onblur="checkInput(this)">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;固话：&nbsp;&nbsp;&nbsp;&nbsp;
+                <input style="width: 130px;height: 30px; border:2px solid gainsboro;" id="phone1" placeholder="请输入固定号码" onblur="checkInput(this)">
+                <br>
+                &nbsp;<font color="black">地址类型：</font>&nbsp;&nbsp;
+                <input class="inp" type="text" id="type" placeholder="请输入地址类型，如：家、公司或者学校" onblur="checkInput(this)">
+                <br>
+<!--                <font style="margin-left: 35px;color: #337ab7" href="/shouhuogl">返回</font>-->
+                <a href="/shouhuogl" style="margin-left: 35px;color: #337ab7">返回</a>
+                <button class="but" style="color: white" id="tianjia">保存</button>
+            </div>
+        </div>
+        <div id="div6">
+            <img style="width: 1500px;height: 160px" src="../static/images/index/index1.1.png">
+        </div>
+        <div id="div7">
+            <img style="width: 1500px;height: 160px" src="../static/images/index/index1.2.png">
+        </div>
+    </div>
+</body>
+<script>
+    function checkInput(input) {
+    var value = input.value.trim();
+    if (value === "") {
+
+        alert("输入不能为空！");
+        input.value = "";
+        location.reload();
+    } else {
+        input.value = value;
+        }
+    }
+
+    //
+    //定义省市区数据
+    var data = {
+        "北京市": {
+            "市辖区": ["东城区", "西城区", "朝阳区", "丰台区", "石景山区", "海淀区", "门头沟区", "房山区", "通州区", "顺义区", "昌平区", "大兴区", "怀柔区", "平谷区", "密云区", "延庆区"]
+        },
+        "上海市": {
+            "市辖区": ["黄浦区", "徐汇区", "长宁区", "静安区", "普陀区", "虹口区", "杨浦区", "闵行区", "宝山区", "嘉定区", "浦东新区", "金山区", "松江区", "青浦区", "奉贤区", "崇明区"]
+        },
+        "广东省": {
+            "广州市": ["越秀区", "海珠区", "荔湾区", "天河区", "白云区", "黄埔区", "番禺区", "花都区", "南沙区", "增城区", "从化区"],
+            "深圳市": ["罗湖区", "福田区", "南山区", "宝安区", "龙岗区", "盐田区"],
+            "珠海市": ["香洲区", "斗门区", "金湾区"],
+            "汕头市": ["龙湖区", "金平区", "濠江区", "潮阳区", "潮南区", "澄海区", "南澳县"],
+            "韶关市": ["武江区", "浈江区", "曲江区", "始兴县", "仁化县", "翁源县", "乳源瑶族自治县", "新丰县", "乐昌市", "南雄市"],
+            "佛山市": ["禅城区", "南海区", "顺德区", "三水区", "高明区"],
+            "江门市": ["蓬江区", "江海区", "新会区", "台山市", "开平市", "鹤山市", "恩平市"],
+            "湛江市": ["赤坎区", "霞山区", "坡头区", "麻章区", "遂溪县", "徐闻县", "廉江市", "雷州市", "吴川市"],
+            "茂名市": ["茂南区", "电白区", "高州市", "化州市", "信宜市"],
+            "肇庆市": ["端州区", "鼎湖区", "高要区", "广宁县", "怀集县", "封开县", "德庆县", "四会市"],
+            "惠州市": ["惠城区", "惠阳区", "博罗县", "惠东县", "龙门县"],
+            "梅州市": ["梅江区", "梅县区", "大埔县", "丰顺县", "五华县", "平远县", "蕉岭县", "兴宁市"],
+            "汕尾市": ["城区", "海丰县", "陆河县", "陆丰市"],
+            "河源市": ["源城区", "紫金县", "龙川县", "连平县", "和平县", "东源县"],
+            "阳江市": ["江城区", "阳东区", "阳西县", "阳春市"],
+            "清远市": ["清城区", "清新区", "佛冈县", "阳山县", "连山壮族瑶族自治县", "连南瑶族自治县", "英德市", "连州市"],
+            "东莞市": ["东莞市"],
+            "中山市": ["中山市"],
+            "潮州市": ["湘桥区", "潮安区", "饶平县"],
+            "揭阳市": ["榕城区", "揭东区", "揭西县", "惠来县", "普宁市"],
+            "云浮市": ["云城区", "云安区", "新兴县", "郁南县", "罗定市"]
+        },
+        "浙江省": {
+            "杭州市": ["上城区", "下城区", "江干区", "拱墅区", "西湖区", "滨江区", "萧山区", "余杭区", "富阳区", "桐庐县", "淳安县", "建德市", "临安市"],
+            "宁波市": ["海曙区", "江北区", "北仑区", "镇海区", "鄞州区", "奉化区", "象山县", "宁海县", "余姚市", "慈溪市"],
+            "温州市": ["鹿城区", "龙湾区", "瓯海区", "洞头区", "永嘉县", "平阳县", "苍南县", "文成县", "泰顺县", "瑞安市", "乐清市"],
+            "嘉兴市": ["南湖区", "秀洲区", "嘉善县", "海盐县", "海宁市", "平湖市", "桐乡市"],
+            "湖州市": ["吴兴区", "南浔区", "德清县", "长兴县", "安吉县"],
+            "绍兴市": ["越城区", "柯桥区", "上虞区", "新昌县", "诸暨市", "嵊州市"],
+            "金华市": ["婺城区", "金东区", "武义县", "浦江县", "磐安县", "兰溪市", "义乌市", "东阳市", "永康市"],
+            "衢州市": ["柯城区", "衢江区", "常山县", "开化县", "龙游县", "江山市"],
+            "舟山市": ["定海区", "普陀区", "岱山县", "嵊泗县"],
+            "台州市": ["椒江区", "黄岩区", "路桥区", "玉环县", "三门县", "天台县", "仙居县", "温岭市", "临海市"],
+            "丽水市": ["莲都区", "青田县", "缙云县", "遂昌县", "松阳县", "云和县", "庆元县", "景宁畲族自治县", "龙泉市"]
+        }
+    };
+
+    //获取省份下拉框元素
+    var province = document.getElementById("province");
+    //获取城市下拉框元素
+    var city = document.getElementById("city");
+    //获取区县下拉框元素
+    var district = document.getElementById("district");
+
+    //省份下拉框改变事件
+    province.onchange = function() {
+        //获取当前选中的省份
+        var provinceName = this.value;
+        //清空城市下拉框
+        city.innerHTML = '<option value="" disabled selected style="display:none;">请选择</option>';
+        //清空区县下拉框
+        district.innerHTML = '<option value="" disabled selected style="display:none;">请选择</option>';
+        //如果选中的是请选择，则直接返回
+        if (provinceName === "") return;
+        //获取当前选中省份的城市数据
+        var cityData = data[provinceName];
+        //遍历城市数据，添加到城市下拉框中
+        for (var cityName in cityData) {
+            var option = document.createElement("option");
+            option.value = cityName;
+            option.innerHTML = cityName;
+            city.appendChild(option);
+        }
+    };
+
+    //城市下拉框改变事件
+    city.onchange = function() {
+        //获取当前选中的城市
+        var cityName = this.value;
+        //清空区县下拉框
+        district.innerHTML = '<option value="" disabled selected style="display:none;">请选择</option>';
+        //如果选中的是请选择，则直接返回
+        if (cityName === "") return;
+        //获取当前选中城市的区县数据
+        var districtData = data[province.value][cityName];
+        //遍历区县数据，添加到区县下拉框中
+        for (var i = 0; i < districtData.length; i++) {
+            var option = document.createElement("option");
+            option.value = districtData[i];
+            option.innerHTML = districtData[i];
+            district.appendChild(option);
+        }
+    };
+
+   </script>
+</html>

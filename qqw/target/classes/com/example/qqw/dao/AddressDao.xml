@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.example.qqw.dao.AddressDao">
+    <resultMap id="AddressMap" type="address">
+        <result column="address_id" property="addressId"/>
+        <result column="userId" property="userId"/>
+        <result column="name" property="name"/>
+        <result column="address_phone" property="addressPhone"/>
+        <result column="address_province" property="addressProvince"/>
+        <result column="address_city" property="addressCity"/>
+        <result column="address_district" property="addressDistrict"/>
+        <result column="detail_address" property="detailAddress"/>
+        <result column="postcode" property="postcode"/>
+        <result column="address_type" property="addressType"/>
+        <result column="telep_hone" property="telepHone"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="creation_time" property="creationTime"/>
+        <result column="founder" property="founder"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="update_by" property="updateBy"/>
+    </resultMap>
+
+    <select id="findId">
+
+    </select>
+    <select id="seekUserAddress" resultMap="AddressMap" >
+        SELECT address_id,name,address_province,address_city,address_district,address_type,postcode,detail_address,address_phone FROM tb_address
+        WHERE user_id =#{userId}
+    </select>
+
+    <insert id="addAddress">
+        INSERT INTO tb_address(user_id,name,address_province,address_city,address_district,postcode,detail_address,telep_hone,address_type,address_phone)
+        VALUES (#{userId},#{name},#{addressProvince},#{addressCity},#{addressDistrict},#{postcode},#{detailAddress},#{telepHone},#{addressType},#{addressPhone})
+    </insert>
+
+    <delete id="deleteAddress">
+        DELETE FROM tb_address WHERE address_id=#{addressId}
+    </delete>
+
+    <update id="updateAddress">
+        UPDATE tb_address SET name=#{name},address_province=#{addressProvince},address_city=#{addressCity},address_district=#{addressDistrict},postcode=#{postcode},detail_address=#{detailAddress},telep_hone=#{telepHone},address_type=#{addressType},address_phone=#{addressPhone}
+        WHERE address_id=#{addressId}
+    </update>
+
+    <select id="seekUpdateAddress" resultMap="AddressMap">
+
+    </select>
+
+</mapper>

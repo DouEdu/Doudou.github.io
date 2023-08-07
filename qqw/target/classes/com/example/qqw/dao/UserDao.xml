@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.example.qqw.dao.UserDao">
+    <resultMap id="UserMap" type="User">
+        <result column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_password" property="userPassword"/>
+        <result column="user_phone" property="userPhone"/>
+        <result column="user_email" property="userEmail"/>
+        <result column="user_sex" property="userSex"/>
+        <result column="user_img" property="userImg"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="creation_time" property="creationTime"/>
+        <result column="founder" property="founder"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="update_by" property="updateBy"/>
+    </resultMap>
+    <insert id="logon">
+        insert into tb_User(user_name,user_password) values (#{userName},#{userPassword})
+    </insert>
+
+    <select id="ifName" parameterType="java.lang.String" resultType="java.lang.String">
+        select user_name from tb_user where user_name=#{userName}
+    </select>
+
+    <select id="register" parameterType="com.example.qqw.pojo.User" resultMap="UserMap">
+        select user_name,user_password,user_id from tb_user where user_name=#{userName} and user_password=#{userPassword}
+    </select>
+
+    <update id="xgpasswprd">
+        UPDATE tb_user SET user_password= #{passWord1} WHERE user_name=#{userName}
+    </update>
+
+    <select id="namePassWord" parameterType="java.lang.String" resultType="java.lang.String">
+        select user_password from tb_user where user_name=#{userName}
+    </select>
+
+    <select id="gerenzl"  resultMap="UserMap">
+        select user_name,user_phone,user_email,user_sex from tb_user where user_name=#{userName}
+    </select>
+
+    <update id="gerenzl2" >
+        UPDATE tb_user SET user_name=#{userName},user_phone=#{userPhone},user_email=#{userEmail},user_sex=#{userSex}
+            WHERE user_name=#{primaryUserName}
+    </update>
+
+    <update id="shangchuantx1">
+        update tb_user set user_img=#{userImg} where user_name=#{userName}
+    </update>
+
+</mapper>

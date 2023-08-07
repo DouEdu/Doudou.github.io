@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.example.qqw.dao.CartDao">
+    <resultMap id="CartMap" type="Cart">
+        <result column="cart_id" property="cartId"/>
+        <result column="user_id" property="userId"/>
+        <result column="commodity_id" property="commodityId"/>
+        <result column="commodity_number" property="commodityNumber"/>
+        <result column="commodity_img" property="commodityImg"/>
+        <result column="commodity_name" property="commodityName"/>
+        <result column="commodity_price" property="commodityPrice"/>
+        <result column="total" property="total"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="creation_time" property="creationTime"/>
+        <result column="founder" property="founder"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="update_by" property="updateBy"/>
+    </resultMap>
+
+    <insert id="addCart">
+        INSERT INTO tb_cart(user_id,commodity_id,commodity_number,total,commodity_img,commodity_name,commodity_price) VALUES (#{userId},#{commodityId},1,#{total},#{commodityImg},#{commodityName},#{commodityPrice})
+    </insert>
+
+    <update id="addNumber">
+        UPDATE tb_cart SET commodity_number=commodity_number+1,total=total+#{commodityPrice} WHERE user_id=#{userId} AND commodity_id=#{commodityId}
+    </update>
+
+    <select id="userCommodity" resultMap="CartMap">
+        SELECT user_id,commodity_id FROM tb_cart WHERE user_id=#{userId} AND commodity_id=#{commodityId}
+    </select>
+
+    <select id="seekUserCart" resultMap="CartMap">
+        SELECT cart_id,user_id,commodity_id,commodity_number,total,commodity_img,commodity_name,commodity_price FROM tb_cart WHERE user_id=#{userId}
+    </select>
+
+    <update id="delNumber">
+        UPDATE tb_cart SET total=total-#{commodityPrice},commodity_number=commodity_number-1 WHERE user_id=#{userId} AND commodity_id=#{commodityId}
+    </update>
+
+    <update id="addNumber1">
+        UPDATE tb_cart SET total=total+#{commodityPrice},commodity_number=commodity_number+1 WHERE user_id=#{userId} AND commodity_id=#{commodityId}
+    </update>
+
+    <delete id="delUserCart">
+        DELETE FROM tb_cart WHERE user_id=#{userId}
+    </delete>
+
+    <delete id="delCart">
+        DELETE FROM tb_cart WHERE user_id=#{userId} AND commodity_id=#{commodityId}
+    </delete>
+</mapper>

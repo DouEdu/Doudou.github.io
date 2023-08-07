@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <script src="../static/js/jquery-3.6.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/ShoppingCart.js" type="text/javascript" charset="utf-8"></script>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        a{
+            color: gray;
+            font-size: 15px;
+            padding: 10px;
+            text-decoration:none;
+        }
+        #div1{
+            width: 1500px;
+            height: 800px;
+            /*border: 1px solid darkred;*/
+            margin: 0 auto;
+        }
+        #div2{
+            width: 1500px;
+            height: 80px;
+            border: 1px solid whitesmoke;
+        }
+        .dns{
+            width: 230px;
+            height: 50px;
+           /* border: 1px solid darkblue;*/
+            margin-top: 13px;
+            margin-left: 50px;
+            float: left;
+        }
+        .div2-1{
+            width: 550px;
+            height: 40px;
+            /*border: 1px solid darkorange;*/
+            margin-left: 900px;
+            margin-top: 25px;
+        }
+        #div3{
+            width: 1500px;
+            height: 50px;
+            /*border: 1px solid dodgerblue;*/
+        }
+        #div4{
+            width: 700px;
+            height: 450px;
+            border: 1px solid #337ab7;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        #div4-1{
+            width: 700px;
+            height: 35px;
+            /*border: 1px solid darkmagenta;*/
+            background-color: #337ab7;
+            padding: 5px;
+        }
+        #div4-2{
+            width: 700px;
+            height: 120px;
+            /*border: 1px solid deeppink;*/
+        }
+        #div5{
+            width: 670px;
+            height: 55px;
+            /*border: 1px solid darkgreen;*/
+            margin: 0 auto;
+            background-color: #F0F9FF;
+            margin-top: 170px;
+        }
+        .inp{
+           width: 90px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid lightgray;
+            color: #5e5e5e;
+            margin-top: 13px;
+            margin-left: 15px;
+        }
+        .tbody{
+            width: 700px;
+            border-collapse: collapse;
+            margin: 0 auto;
+            border: 1px solid white;
+        }
+        th{
+            text-align: center;
+            /*border: 1px solid #000000;*/
+        }
+        .inline{
+            height: 80px;
+            text-align: center;
+            color: rgb(167, 159, 159);
+            font-size: 14px;
+        }
+        .fon{
+            float: right;
+            margin-top: 16px;
+            color: #5e5e5e;
+        }
+        #div6{
+            width: 80px;
+            height: 40px;
+            /*border: 1px solid darkorange;*/
+            float: right;
+            margin-top: 10px;
+        }
+        .btun{
+            width: 60px;
+            height: 35px;
+            background-color: #428BCA;
+            color: white;
+            border: none;
+        }
+        #div7{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkgreen;*/
+            float: left;
+            margin-top: 80px;
+        }
+        #div8{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkorange;*/
+            float: left;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            padding: 0 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div class="dns">
+                <img src="../static/images/index/stumalllogo.png">
+            </div>
+            <div class="div2-1">
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/齿轮组,设置,设定.png"> 管理<span class="caret"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/collect" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/喜爱.png">收藏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/indent" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/文件.png">订单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/ShoppingCart" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/购物车满.png">购物车&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/" style="text-decoration:none;"><img style="height: 15px;width: 20px;" src="../static/images/index/个人头像_o.png">首页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/xgpasswprd">修改密码</a></li>
+                        <li><a href="/gerenzl">个人资料</a></li>
+                        <li><a href="/shangchuantx">上传头像</a></li>
+                        <li><a href="/shouhuogl">收货管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="div3">
+            <img style="width: 1500px;height: 49px" src="../static/images/index/搜索框.png">
+        </div>
+        <div id="div4">
+            <div id="div4-1">
+                <font style="font-size: 15px;color: white;"><img style="width: 15px;height: 15px;" src="../static/images/index/购物车空.png">购物车</font>
+            </div>
+            <div id="div4-2">
+                <div style="display: flex; align-items: center;">
+                    <input type="checkbox" name="vehicle" value="Bike" style="font-weight: bold;">全选&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="font-weight: bold; float:right;">商品</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="font-weight: bold; float:right; margin-right: 20px;">单价</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="font-weight: bold; float:right; margin-right: 20px;">数量</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="font-weight: bold; float:right; margin-right: 20px;">金额</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="font-weight: bold; float:right; margin-right: 20px;">操作</span>
+
+                </div>
+                <div id="ddd">
+
+
+                </div>
+                <div id="div6">
+                    <button onclick="jiesuan(event)" class="btun">结算</button>
+                </div>
+<!--                <table >-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        <th>-->
+<!--                            <input type="checkbox" name="vehicle" value="Bike">全选-->
+<!--                        </th>-->
+
+<!--                        <th>商品</th>-->
+<!--                        <th>单价</th>-->
+<!--                        <th>数量</th>-->
+<!--                        <th>金额</th>-->
+<!--                        <th>操作</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                </table>-->
+<!--                <tbody class="tbody">-->
+<!--                <tr class="inline">-->
+<!--                    <td>-->
+<!--                        <input type="checkbox" name="vehicle" value="Bike">-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <img style="width: 120px;height: 90px" src="../static/images/portal/15Lenovo_xiaoxin_310_black/1_big.png">-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <a>联想小新超薄笔记本</a>-->
+<!--                    </td>-->
+<!--                    <td>￥5298</td>-->
+<!--                    <td>-->
+<!--                        <button style="width: 18px;height: 22px;text-align: center;">-</button>-->
+<!--                        <input type="text" value="1" style="width: 28px;height: 20px;text-align: center;">-->
+<!--                        <button style="width: 18px;height: 22px;text-align: center;">+</button>-->
+<!--                    </td>-->
+<!--                    <td>￥5298</td>-->
+<!--                    <td>-->
+<!--                        <a style="color: grey">删除</a>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+            </div>
+<!--                <div id="div5">-->
+<!--                    <input type="text" value="删除所选商品" class="inp">-->
+<!--                    <font class="fon">已选商品 0件 总价 ￥0元</font>-->
+<!--                </div>-->
+<!--                <div id="div6">-->
+<!--                    <button class="btun" id="jiesuan">结算</button>-->
+<!--                </div>-->
+        </div>
+        <div id="div7">
+            <img style="width: 1500px;height: 160px" src="../static/images/index/index1.1.png">
+        </div>
+        <div id="div8">
+            <img style="width: 1500px;height: 160px" src="../static/images/index/index1.2.png">
+        </div>
+    </div>
+</body>
+</html>

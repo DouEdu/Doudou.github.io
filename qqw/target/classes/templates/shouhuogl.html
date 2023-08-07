@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收货管理</title>
+    <script src="../static/js/jquery-3.6.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/shgl1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/shgl2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../static/js/shohuogl.js" type="text/javascript" charset="utf-8"></script>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        a{
+            color: gray;
+            font-size: 15px;
+            padding: 10px;
+            text-decoration:none;
+        }
+        #div1{
+            width: 1500px;
+            height: 750px;
+            /*border: 1px solid darkred;*/
+            margin: 0 auto;
+        }
+        #div2{
+            width: 1500px;
+            height: 80px;
+            border: 1px solid whitesmoke;
+        }
+        .dns{
+            width: 230px;
+            height: 50px;
+            /*border: 1px solid darkblue;*/
+            margin-top: 13px;
+            margin-left: 50px;
+            float: left;
+        }
+        .div2-1{
+            width: 550px;
+            height: 40px;
+            /*border: 1px solid darkorange;*/
+            margin-left: 900px;
+            margin-top: 25px;
+        }
+        #div3{
+            width: 1500px;
+            height: 50px;
+            /*border: 1px solid dodgerblue;*/
+        }
+        #div4{
+            width: 150px;
+            height: 200px;
+            /* border: 1px solid deeppink;*/
+            margin-left: 320px;
+            float: left;
+            margin-top: 10px;
+        }
+        #div4-1{
+            width: 130px;
+            height: 30px;
+            border: 1px solid gainsboro;
+            background-color: #F5F5F5;
+            padding-top:5px;
+            padding-left: 10px;
+        }
+        #div4-2{
+            width: 130px;
+            height: 100px;
+            border: 1px solid gainsboro;
+            size: 13px;
+            color: #428BCA;
+            padding-top:5px;
+            padding-left: 10px;
+        }
+        #div4-3{
+            width: 130px;
+            height: 30px;
+            border: 1px solid gainsboro;
+            background-color: #F5F5F5;
+            padding-top:5px;
+            padding-left: 10px;
+        }
+        #div5{
+            width: 700px;
+            height: 400px;
+            border: 1px solid gainsboro;
+            margin-left: 480px;
+            margin-top: 10px;
+        }
+        .div5-1{
+            width: 700px;
+            height: 50px;
+            border: 1px solid gainsboro;
+            padding-top: 15px;
+        }
+        .fon{
+            padding-left: 25px;
+            font-size: 15px;
+        }
+        .di{
+            color: black;
+            padding-left: 50px;
+        }
+        .but{
+            width: 120px;
+            height: 30px;
+            border: 1px solid  #428BCA;
+            background-color:  #428BCA;
+            margin-left: 40px;
+            border-radius: 5%;
+        }
+        #div6{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkgreen;*/
+            float: left;
+            margin-top: 20px;
+        }
+        #div7{
+            width: 1500px;
+            height: 160px;
+            /*border: 1px solid darkorange;*/
+            float: left;
+        }
+        #first {
+            list-style: none;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div class="dns">
+                <img src="../static/images/index/stumalllogo.png">
+            </div>
+            <div class="div2-1">
+                <div class="dropdown">
+                    <a href="#" data-toggle="dropdown" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/齿轮组,设置,设定.png"> 管理<span class="caret"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/collect" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/喜爱.png">收藏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/indent" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/文件.png">订单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/ShoppingCart" style="text-decoration:none;"><img style="height: 13px;width: 13px;" src="../static/images/index/购物车满.png">购物车&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <a href="/" style="text-decoration:none;"><img style="height: 15px;width: 20px;" src="../static/images/index/个人头像_o.png">首页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/xgpasswprd">修改密码</a></li>
+                        <li><a href="/gerenzl">个人资料</a></li>
+                        <li><a href="/shangchuantx">上传头像</a></li>
+                        <li><a href="/shouhuogl">收货管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="div3">
+            <img style="width: 1500px;height: 49px" src="../static/images/index/搜索框.png">
+        </div>
+        <div id="div4">
+            <div id="div4-1">
+                <font style="font-size: 15px;color: #5e5e5e;">我的订单</font>
+            </div>
+            <div id="div4-3">
+                <font style="font-size: 15px;color: #5e5e5e;">资料修改</font>
+            </div>
+            <div id="div4-2">
+                <p style="height: 10px">修改密码</p>
+                <p style="height: 10px">个人资料</p>
+                <p style="height: 10px">上传头像</p>
+                <p style="height: 10px">收货管理</p>
+            </div>
+        </div>
+        <div id="div5">
+            <div class="div5-1">
+                <a class="fon" style="text-decoration:none;color: #428BCA;">修改密码</a>
+                <a class="fon" style="text-decoration:none;color: #428BCA;">个人资料</a>
+                <a class="fon" style="text-decoration:none;color: #428BCA;">上传头像</a>
+                <a class="fon" style="text-decoration:none;color: #5e5e5e;">收货管理</a>
+            </div>
+                <p style="margin-left: 300px;color: #5e5e5e;margin-top: 10px">收货地址列表</p>
+
+            <div>
+                <a class="leixing">地址类型</a>&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="name">收货人姓名</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="xiangxi">详细地址</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="phone">联系电话</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="caozuo">操作</a>
+                <div id="kon-1" class="kon-1">
+
+                </div>
+            </div>
+
+                <hr>
+                <a href="/xinzengdz">
+
+                    <button class="but" style="color: white">+新增收货地址</button>
+                </a>
+        </div>
+        <div id="div6">
+            <img style="width: 1500px;height: 160px" src="../static/images/index/index1.1.png">
+        </div>
+        <div id="div7">
+            <img style="width: 1500px;height: 160px" src="../static/images/index/index1.2.png">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="com.example.qqw.dao.FavoriteDao">
+    <resultMap id="FavoriteMap" type="Favorite">
+        <result column="favorite_id" property="favoriteId"/>
+        <result column="user_id" property="userId"/>
+        <result column="commodity_id" property="commodityId"/>
+        <result column="commodity_img" property="commodityImg"/>
+        <result column="commodity_price" property="commodityPrice"/>
+        <result column="commodity_overview" property="commodityOverview"/>
+        <result column="commodity_name" property="commodityName"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="creation_time" property="creationTime"/>
+        <result column="founder" property="founder"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="update_by" property="updateBy"/>
+    </resultMap>
+
+    <insert id="addFavorite">
+        INSERT INTO tb_favorite(user_id,commodity_id,commodity_img,commodity_price,commodity_overview,commodity_name)
+        VALUES (#{userId},#{commodityId},#{commodityImg},#{commodityPrice},#{commodityOverview},#{commodityName})
+    </insert>
+
+    <select id="ifRepeat" resultMap="FavoriteMap">
+        SELECT user_id,commodity_id FROM tb_favorite WHERE user_id=#{userId} AND commodity_id=#{commodityId}
+    </select>
+
+    <select id="seekUserFavorite" resultMap="FavoriteMap">
+        SELECT favorite_id,commodity_id,commodity_img,commodity_overview,commodity_price,commodity_name FROM tb_favorite f WHERE user_id=#{userId}
+    </select>
+
+    <delete id="delFavorite">
+        DELETE FROM tb_favorite WHERE favorite_id=#{favoriteId}
+    </delete>
+</mapper>
